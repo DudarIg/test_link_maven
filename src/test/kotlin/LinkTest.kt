@@ -13,7 +13,7 @@ class LinkTest {
     }
 
     val driver = ChromeDriver()
-    var menu: List<WebElement>? = null
+    lateinit var menu: List<WebElement>
 
     private fun setUp() {
         driver.get("https://swetotehnika.ru")
@@ -23,7 +23,7 @@ class LinkTest {
     @Test
     fun testMenuLink0() {
         setUp()
-        menu!![0].click()
+        menu[0].click()
         driver.get("https://swetotehnika.ru/catalog/")
         var links : MutableList<WebElement>? = null
         for (i in 1..COUNT) {
@@ -38,7 +38,7 @@ class LinkTest {
     @Test
     fun testMenuLink1() {
         setUp()
-        menu!![1].click()
+        menu[1].click()
         driver.get("https://swetotehnika.ru/shop/apparatura_puskoreguliruyushchaya/")
         var links : MutableList<WebElement>? = null
         for (i in 1..COUNT) {
@@ -53,7 +53,7 @@ class LinkTest {
     @Test
     fun testMenuLink2() {
         setUp()
-        menu!![2].click()
+        menu[2].click()
         var links : MutableList<WebElement>? = null
         driver.get("https://swetotehnika.ru/services/")
         for (i in 1..COUNT) {
@@ -67,7 +67,7 @@ class LinkTest {
     @Test
     fun testMenuLink3() {
         setUp()
-        menu!![3].click()
+        menu[3].click()
         driver.executeScript("window.history.go(-1)")
     }
 
@@ -75,7 +75,7 @@ class LinkTest {
     @Test
     fun testMenuLink4() {
         setUp()
-        menu!![4].click()
+        menu[4].click()
         var links : MutableList<WebElement>? = null
         driver.get("https://swetotehnika.ru/proizvoditeli-svetotekhniki/")
         for (i in 1..COUNT) {
@@ -90,7 +90,7 @@ class LinkTest {
     @Test
     fun testMenuLink5() {
         setUp()
-        menu!![5].click()
+        menu[5].click()
         driver.executeScript("window.history.go(-1)")
     }
 
@@ -100,7 +100,7 @@ class LinkTest {
     @Test
     fun testMenuLink6() {
         setUp()
-        menu!![6].click()
+        menu[6].click()
         var links : MutableList<WebElement>? = null
         driver.get("https://swetotehnika.ru/news/")
         for (i in 1..COUNT) {
@@ -115,7 +115,7 @@ class LinkTest {
     @Test
     fun testMenuLink7() {
         setUp()
-        menu!![7].click()
+        menu[7].click()
         driver.executeScript("window.history.go(-1)")
     }
 
